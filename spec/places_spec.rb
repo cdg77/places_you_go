@@ -15,4 +15,12 @@ describe(Places) do
       expect(Places.all()).to(eq([]))
     end
   end
+
+  describe('#save') do
+      it('saves the user input to an array') do
+        test_place = Places.new('San Francisco, California')
+        expect(test_place.save()).to(eq([test_place]))
+      end
+  end
+
 end
