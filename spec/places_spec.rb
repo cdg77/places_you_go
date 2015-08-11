@@ -3,6 +3,10 @@ require('places')
 
 describe(Places) do
 
+  before() do
+    Places.clear()
+  end
+
   describe('#place') do
     it('take a user input for a place they have been') do
       test_place=Places.new('Portland, Oregon')
@@ -21,6 +25,14 @@ describe(Places) do
         test_place = Places.new('San Francisco, California')
         expect(test_place.save()).to(eq([test_place]))
       end
+  end
+
+  describe('.clear') do
+    it('clears the array') do
+      Places.new('Boise, Idaho').save()
+      Places.clear()
+      expect(Places.all()).to(eq([]))
+    end
   end
 
 end

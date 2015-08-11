@@ -15,9 +15,10 @@ class Places
   end
 
   define_singleton_method(:all) do
-      @@all_places
+    @@all_places
   end
 
-
-
+  define_singleton_method(:clear) do
+    @@all_places = []
+  end
 end
